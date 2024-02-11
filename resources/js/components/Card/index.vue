@@ -16,7 +16,7 @@
                     @click="functionAddCart(item)">
                     Tambahkan ke Keranjang
                 </button>
-                <button v-else class="btn btn-outline-secondary" disabled>
+                <button v-else class="btn btn-outline-secondary mt-4" disabled>
                     Tambahkan ke Keranjang
                 </button>
             </div>

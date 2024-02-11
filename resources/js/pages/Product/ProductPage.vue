@@ -1,60 +1,60 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center ">
+    <div class="container pb-5">
+        <div class="row justify-content-center">
             <h1 class="fw-bold fs-3 my-3 text-decoration-underline">Semua Produk</h1>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Stock</th>
-                        <th>Price</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(allProduct, index) in allProducts" :key="index" class="table align-middle">
-                        <td>{{ allProduct.name }}</td>
-                        <td>{{ allProduct.description }}</td>
-                        <td>{{ allProduct.stock }}</td>
-                        <td>Rp. {{ allProduct.price }}</td>
-                        <td>
-                            <button class="btn btn-outline-primary " type="submit" @click="functionAddToCart(allProduct)"
-                                v-if="allProduct.stock > 0">
-                                Add to cart
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <ShoppingCartComponent :shoppingCartDatas="cartProducts" :totalPassing="total" @emit-click="functionDelete"
-                @emit-checkout="functionCheckout"></ShoppingCartComponent>
+            <div class="row">
+                <div class="col-7">
+                    <div class="d-flex justify-content-start flex-wrap gap-4">
+                        <Card :shopingCartDatas="allProducts" @emit-addCart="functionAddToCart" />
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bg-white p-5 rounded-3">
+                        <ShopingCart :shoppingCartDatas="cartProducts" :totalPassing="total" @emit-click="functionDelete"
+                            @emit-checkout="functionCheckout"></ShopingCart>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 </template>
 
 <script>
-import ShoppingCartComponent from './ShoppingCart.vue';
-
+import { ShopingCart, Card } from "@/components";
 export default {
     data: function () {
         return {
             allProducts: [
                 {
+                    img: 'https://asset.kompas.com/crops/z-0iiIfScsgdUPMYcnVCqXtVuNc=/36x0:1236x800/1200x800/data/photo/2022/04/02/62485733a4a34.jpg',
                     name: "Indomie Goreng Rendang",
                     description: "Masakan instan terenak di dunia",
+                    rate: 5,
                     stock: 10,
                     price: 3900,
                 },
                 {
+                    img: 'https://img-global.cpcdn.com/recipes/8161ffc01ac0643a/1200x630cq70/photo.jpg',
                     name: "Mie Gelas Rendang",
                     description: "Mie instant khusus anak kosan",
+                    rate: 4,
                     stock: 5,
                     price: 1500,
                 },
                 {
-                    name: "Bakmi Mewah",
-                    description: "Kalau anak kosan jangan macem2 deh",
+                    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS7ZR-WT4YKJliQYoMe6zo3kMgk8Ll54h3xA&usqp=CAU',
+                    name: "Bakmi Jawa",
+                    description: "Enaknya Minta nagih",
+                    rate: 4,
+                    stock: 80,
+                    price: 10000,
+                },
+                {
+                    img: 'https://lasegar.co.id/po-content/uploads/2504-ramen.jpg',
+                    name: "Mie Ramen",
+                    description: "masakan mi kuah ala Jepang ",
+                    rate: 4,
                     stock: 80,
                     price: 10000,
                 },
@@ -82,6 +82,7 @@ export default {
                 });
             }
             this.total += allProducts.price;
+            console.log(this.total);
         },
         functionDelete(index) {
             this.total = this.total - this.cartProducts[index].price;
@@ -94,12 +95,12 @@ export default {
             console.log(index);
         },
         functionCheckout() {
-            alert(`Pay us ${this.total}`)
+            alert(`Anda Harus Membayar Rp. ${this.total}`)
         },
     },
     mounted() {
         console.log("Component mounted.");
     },
-    components: { ShoppingCartComponent }
+    components: { ShopingCart, Card }
 };
 </script>

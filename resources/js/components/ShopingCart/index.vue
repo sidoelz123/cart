@@ -3,9 +3,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
+                <th scope="col">Total Harga</th>
                 <th></th>
             </tr>
         </thead>
@@ -15,12 +15,14 @@
                 <td>{{ item.stock }}</td>
                 <td>Rp. {{ item.price }}</td>
                 <td>
-                    <button class="btn btn-danger text-bg-danger" @click="functionClick(index)">Delete</button>
+                    <button @click="functionClick(index)"><font-awesome-icon icon="trash-can" size="sm"
+                            class="btn btn-danger text-bg-danger" /></button>
                 </td>
             </tr>
             <tr>
                 <th colspan="2">Total:</th>
                 <th>Rp. {{ totalPassing }}</th>
+                <th></th>
             </tr>
         </tbody>
     </table>

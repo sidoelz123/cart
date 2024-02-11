@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <h1>Semua Produk</h1>
+        <div class="row justify-content-center ">
+            <h1 class="fw-bold fs-3 my-3 text-decoration-underline">Semua Produk</h1>
             <table class="table">
                 <thead>
                     <tr>
@@ -19,7 +19,7 @@
                         <td>{{ allProduct.stock }}</td>
                         <td>Rp. {{ allProduct.price }}</td>
                         <td>
-                            <button class="btn btn-primary" type="submit" @click="functionAddToCart(allProduct)"
+                            <button class="btn btn-outline-primary " type="submit" @click="functionAddToCart(allProduct)"
                                 v-if="allProduct.stock > 0">
                                 Add to cart
                             </button>

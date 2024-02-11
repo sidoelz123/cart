@@ -21472,7 +21472,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     functionDelete: function functionDelete(index) {
       var _this = this;
-      // console.log(this.cartProducts[index].price);
       this.total = this.total - this.cartProducts[index].price;
       this.allProducts.forEach(function (data) {
         if (data.name === _this.cartProducts[index].name) {
@@ -21481,7 +21480,6 @@ __webpack_require__.r(__webpack_exports__);
         ;
       });
       this.cartProducts.splice(index, 1);
-      // this.total = this.total - this.cartProducts[index].price;
       console.log(index);
     },
     functionCheckout: function functionCheckout() {
@@ -21552,7 +21550,9 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "row justify-content-center"
 };
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Semua Produk", -1 /* HOISTED */);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "fw-bold fs-3 my-3 text-decoration-underline"
+}, "Semua Produk", -1 /* HOISTED */);
 var _hoisted_4 = {
   "class": "table"
 };
@@ -21566,7 +21566,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "table align-middle"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(allProduct.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(allProduct.description), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(allProduct.stock), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rp. " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(allProduct.price), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [allProduct.stock > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
       key: 0,
-      "class": "btn btn-primary",
+      "class": "btn btn-outline-primary",
       type: "submit",
       onClick: function onClick($event) {
         return $options.functionAddToCart(allProduct);
@@ -21595,7 +21595,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Keranjang Belanja", -1 /* HOISTED */);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "fw-bold fs-3 my-3 text-decoration-underline"
+}, "Keranjang Belanja", -1 /* HOISTED */);
 var _hoisted_2 = {
   "class": "table"
 };

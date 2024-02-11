@@ -1,5 +1,5 @@
 <template>
-    <h1>Keranjang Belanja</h1>
+    <h1 class="fw-bold fs-3 my-3 text-decoration-underline ">Keranjang Belanja</h1>
     <table class="table">
         <thead>
             <tr>
